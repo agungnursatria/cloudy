@@ -27,7 +27,7 @@ class WeatherForecastMain extends Equatable {
     if (json == null) return null;
 
     return WeatherForecastMain(
-      temp: (json['tem'] as num?)?.toDouble(),
+      temp: (json['temp'] as num?)?.toDouble(),
       feelsLike: (json['feels_like'] as num?)?.toDouble(),
       tempMin: (json['temp_min'] as num?)?.toDouble(),
       tempMax: (json['temp_max'] as num?)?.toDouble(),

@@ -16,7 +16,7 @@ class HomeService {
     required String appId,
   }) async {
     return await network.requestGetNoAuth(
-      path: '/forceast',
+      path: '/forecast',
       queryParameters: {
         'lat': lat,
         'lon': lon,
