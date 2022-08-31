@@ -49,7 +49,7 @@ class NetworkHttpInterface {
   ) {
     return Left(NetworkModel(
       code: jsonResponse.statusCode,
-      response: jsonDecode(jsonResponse.data),
+      response: jsonResponse.data,
     ));
   }
 
