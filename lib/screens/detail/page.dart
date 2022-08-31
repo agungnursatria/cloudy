@@ -2,6 +2,9 @@ import 'package:cloudy/screens/detail/initiator.dart';
 import 'package:cloudy/screens/detail/view.dart';
 import 'package:flutter/material.dart';
 
+/// [DetailPage] is [StatefulWidget] has a responsibility as
+/// a bridge between [DetailView] and [DetailInitiator],
+///
 class DetailPage extends StatefulWidget {
   static const String PATH = '/detail';
   const DetailPage({Key? key}) : super(key: key);
