@@ -5,10 +5,10 @@ class WeatherForecastMain extends Equatable {
   final double? feelsLike;
   final double? tempMin;
   final double? tempMax;
-  final double? pressure;
-  final double? seaLevel;
-  final double? groundLevel;
-  final double? humidity;
+  final int? pressure;
+  final int? seaLevel;
+  final int? groundLevel;
+  final int? humidity;
   final double? tempKF;
 
   const WeatherForecastMain({

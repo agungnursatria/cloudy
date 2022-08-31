@@ -8,11 +8,11 @@ import 'package:equatable/equatable.dart';
 class WeatherForecast extends Equatable {
   final int? dt;
   final WeatherForecastMain? main;
-  final Weather? weather;
+  final List<Weather>? weather;
   final Cloud? clouds;
   final Wind? wind;
   final int? visibility;
-  final int? pop;
+  final double? pop;
   final Sys? sys;
   final String? dtTxt;
 
@@ -42,11 +42,11 @@ class WeatherForecast extends Equatable {
     return WeatherForecast(
       dt: json['dt'],
       main: WeatherForecastMain.fromJson(json['main']),
-      weather: Weather.fromJson(json['weather']),
+      weather: Weather.parseList(json['weather']),
       clouds: Cloud.fromJson(json['clouds']),
       wind: Wind.fromJson(json['wind']),
       visibility: json['visibility'],
-      pop: json['pop'],
+      pop: (json['pop'] as num?)?.toDouble(),
       sys: Sys.fromJson(json['sys']),
       dtTxt: json['dt_txt'],
     );

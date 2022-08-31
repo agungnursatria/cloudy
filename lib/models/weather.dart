@@ -24,6 +24,14 @@ class Weather extends Equatable {
     );
   }
 
+  static List<Weather> parseList(List<dynamic>? response) {
+    return (response != null)
+        ? List<Weather>.from(
+            response.map((r) => Weather.fromJson(r)),
+          )
+        : [];
+  }
+
   @override
   List<Object?> get props => [
         id,
