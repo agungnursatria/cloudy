@@ -1,4 +1,6 @@
 import 'package:cloudy/screens/home/service/service.dart';
+import 'package:cloudy/utils/navi/navi.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:cloudy/config/network/http/network_http_interface.dart';
 import 'package:cloudy/config/network/http/network_http_library.dart';
@@ -24,6 +26,11 @@ class Injector {
       ..registerLazySingleton(
         () => NetworkHttpInterface(library: _container()),
       );
+
+    /// Register Navigator
+    _container
+      ..registerLazySingleton(() => GlobalKey<NavigatorState>())
+      ..registerLazySingleton(() => Navi(navKey: _container()));
 
     /// Register Service
     _container.registerLazySingleton(() => HomeService(network: _container()));

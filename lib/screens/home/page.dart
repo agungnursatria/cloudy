@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 /// a bridge between [HomeView] and [HomeInitiator],
 ///
 class HomePage extends StatefulWidget {
+  static const String PATH = '';
   const HomePage({Key? key}) : super(key: key);
 
   @override

@@ -1,9 +1,14 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:cloudy/config/environment/env.dart';
 import 'package:cloudy/di/injector.dart';
 import 'package:cloudy/models/weather_forecast.dart';
+import 'package:cloudy/screens/detail/argument.dart';
+import 'package:cloudy/screens/detail/page.dart';
 import 'package:cloudy/screens/home/bloc/weather_forecast/bloc.dart';
 import 'package:cloudy/screens/home/page.dart';
 import 'package:cloudy/screens/home/service/service.dart';
+import 'package:cloudy/utils/navi/navi.dart';
 
 class HomeInitiator {
   final String _monasLat = '-6.175115064391812';
@@ -39,5 +44,13 @@ class HomeInitiator {
   /// This function will open weather detail page and display
   /// the detail of weather forecast.
   ///
-  void onTapWeather(WeatherForecast forecast) {}
+  void onTapWeather(WeatherForecast forecast) {
+    Navi _navi = Injector().find();
+    _navi.navigateToNamed(
+      DetailPage.PATH,
+      arguments: DetailArgument(
+        weatherForecast: forecast,
+      ),
+    );
+  }
 }
