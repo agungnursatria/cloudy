@@ -1,5 +1,5 @@
 import 'package:cloudy/screens/home/service/service.dart';
-import 'package:cloudy/utils/navi/navi.dart';
+import 'package:cloudy/config/navi/navi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
 import 'package:cloudy/config/network/http/network_http_interface.dart';
