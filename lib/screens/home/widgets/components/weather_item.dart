@@ -4,6 +4,7 @@ import 'package:cloudy/models/weather.dart';
 import 'package:cloudy/models/weather_forecast.dart';
 import 'package:cloudy/utils/constant/unicode.dart';
 import 'package:cloudy/utils/formatter_time.dart';
+import 'package:cloudy/utils/helper.dart';
 import 'package:flutter/material.dart';
 
 class WeatherItemView extends StatelessWidget {
@@ -72,7 +73,7 @@ class WeatherItemView extends StatelessWidget {
                   const SizedBox(height: 4),
                   // Temperature
                   Text(
-                    'Temp: ${weatherForecast.main?.temp}${UnicodeConstant.DEGREE}C',
+                    'Temp: ${Helper.kelvinToCelcius(weatherForecast.main?.temp).toStringAsFixed(1)}${UnicodeConstant.DEGREE}C',
                     style: const TextStyle(fontSize: 14),
                   ),
                 ],

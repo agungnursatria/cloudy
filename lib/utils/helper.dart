@@ -11,4 +11,9 @@ class Helper {
     debugPrint('Error:\n${exception.toString()}');
     debugPrint('StackTrace:\n${stackTrace.toString()}');
   }
+
+  static double kelvinToCelcius(double? kelvin) {
+    if (kelvin == null) return 0;
+    return kelvin - 273.15;
+  }
 }

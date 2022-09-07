@@ -4,6 +4,7 @@ import 'package:cloudy/models/weather.dart';
 import 'package:cloudy/models/weather_forecast.dart';
 import 'package:cloudy/utils/constant/unicode.dart';
 import 'package:cloudy/utils/formatter_time.dart';
+import 'package:cloudy/utils/helper.dart';
 import 'package:flutter/material.dart';
 
 class DetailView extends StatelessWidget {
@@ -63,7 +64,7 @@ class DetailView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '${forecast?.main?.temp}${UnicodeConstant.DEGREE}C',
+                  '${Helper.kelvinToCelcius(forecast?.main?.temp)}${UnicodeConstant.DEGREE}C',
                   style: const TextStyle(
                     fontSize: 32,
                   ),
@@ -98,7 +99,7 @@ class DetailView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      '${forecast?.main?.tempMin}${UnicodeConstant.DEGREE}C',
+                      '${Helper.kelvinToCelcius(forecast?.main?.tempMin).toStringAsFixed(1)}${UnicodeConstant.DEGREE}C',
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -116,7 +117,7 @@ class DetailView extends StatelessWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      '${forecast?.main?.tempMax}${UnicodeConstant.DEGREE}C',
+                      '${Helper.kelvinToCelcius(forecast?.main?.tempMax).toStringAsFixed(1)}${UnicodeConstant.DEGREE}C',
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,

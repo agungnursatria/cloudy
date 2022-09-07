@@ -1,5 +1,6 @@
 import 'package:cloudy/models/Sys.dart';
 import 'package:cloudy/models/cloud.dart';
+import 'package:cloudy/models/rain.dart';
 import 'package:cloudy/models/weather.dart';
 import 'package:cloudy/models/weather_forecast_main.dart';
 import 'package:cloudy/models/wind.dart';
@@ -13,6 +14,7 @@ class WeatherForecast extends Equatable {
   final Wind? wind;
   final int? visibility;
   final double? pop;
+  final Rain? rain;
   final Sys? sys;
   final String? dtTxt;
 
@@ -24,6 +26,7 @@ class WeatherForecast extends Equatable {
     this.wind,
     this.visibility,
     this.pop,
+    this.rain,
     this.sys,
     this.dtTxt,
   });
@@ -46,6 +49,7 @@ class WeatherForecast extends Equatable {
       clouds: Cloud.fromJson(json['clouds']),
       wind: Wind.fromJson(json['wind']),
       visibility: json['visibility'],
+      rain: Rain.fromJson(json['rain']),
       pop: (json['pop'] as num?)?.toDouble(),
       sys: Sys.fromJson(json['sys']),
       dtTxt: json['dt_txt'],
@@ -61,6 +65,7 @@ class WeatherForecast extends Equatable {
         wind,
         visibility,
         pop,
+        rain,
         sys,
         dtTxt,
       ];

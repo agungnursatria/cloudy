@@ -16,7 +16,7 @@ class Wind extends Equatable {
 
     return Wind(
       speed: (json['speed'] as num?)?.toDouble(),
-      degree: json['degree'],
+      degree: json['deg'],
       gust: (json['gust'] as num?)?.toDouble(),
     );
   }
